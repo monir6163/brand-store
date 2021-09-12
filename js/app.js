@@ -17,8 +17,8 @@ const showProducts = (products) => {
       </div>
       <h5>${product.title}</h5>
       <h6>Category: ${product.category}</h6>
-      <h6>Rating Count : <span class = "fw-bold">${product.rating.count}</span></h6>
-      <h6>Rating:  <span class = "fw-bold">${product.rating.rate}</span></h6>
+      <h6><i class="fas fa-calculator"></i> Rating Count : <span class = "fw-bold">${product.rating.count}</span></h6>
+      <h6>Rating:  <span class = "fw-bold"><i ${product.id} class="fas fa-star"></i>${product.rating.rate}</span></h6>
       <h5>Price: $ ${product.price}</h5>
       <div class = "d-flex flex-column flex-md-row justify-content-between mt-5">
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-outline-success">add to cart</button>
