@@ -230,7 +230,12 @@ const displayRateIcon = (rate) => {
   for (let i = 0; i < floorRate; i++) {
     rateIcon += `<i class="bi bi-star-fill"></i>`;
   }
-  rateIcon += `<i class="bi bi-star-half"></i>`;
+
+  if (rate !== floorRate) {
+    rateIcon += `<i class="bi bi-star-half"></i>`;
+  } else {
+    rateIcon += `<i class="bi bi-star"></i>`;
+  }
 
   if (5 - floorRate > 1) {
     for (let i = 0; i < 5 - floorRate - 1; i++) {
@@ -250,7 +255,7 @@ const showProducts = (products) => {
     div.innerHTML = `
             <div class="card h-100">
                 <div class="p-3">
-                    <img class="card-img-top product-image" src=${image}></img>
+                    <img class="card-img-top product-image" src=${image} alt = "${product.title}">
                 </div>
                 <div class="card-body">
                 <h5 class="card-title">${product.title}</h5>
@@ -258,7 +263,7 @@ const showProducts = (products) => {
                 <h5>Price: $ ${product.price}</h5>
                 <h6>Rating count: ${product.rating.count}</h6>
                 <div class="">
-                <span class = "fs-6 rating">Rating: </span>
+                <span class = "fs-6 rating">Rate: </span>
                     <span class = "text-warning fs-6 fw-bold">${displayRateIcon(product.rating.rate)} <span class = "text-secondary fw-bold">(${product.rating.rate})</span></span>
                 </div>
                 </div>
@@ -268,11 +273,11 @@ const showProducts = (products) => {
                     <button id="details-btn" class="btn btn-outline-primary fw-bold">See Details</button>
                   </div>
                 </div>
-            </div>     
-        `;
+            </div>`;
     document.getElementById("all-products").appendChild(div);
   }
 };
+// add to cart button 
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
