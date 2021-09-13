@@ -269,7 +269,7 @@ const showProducts = (products) => {
                 </div>
                 <div class="card-footer text-center">
                   <div class="d-flex flex-column flex-md-row justify-content-between">
-                    <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="btn btn-outline-success fw-bold">Add to cart</button>
+                    <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="btn btn-outline-success fw-bold card-btn">Add to cart</button>
                     <button id="details-btn" class="btn btn-outline-primary fw-bold">See Details</button>
                   </div>
                 </div>
